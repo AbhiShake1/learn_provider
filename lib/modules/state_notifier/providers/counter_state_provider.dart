@@ -1,9 +1,9 @@
 import 'package:learn_provider/riverpod.dart';
 
-class CounterStateProvider extends StateNotifier<int> {
-  CounterStateProvider() : super(0);
+class _CounterStateProvider extends StateNotifier<int> {
+  _CounterStateProvider() : super(0);
   void increment() => state++;
 }
 
-final counterStateProvider = StateNotifierProvider<CounterStateProvider, int>(
-    (_) => CounterStateProvider());
+final counterStateProvider =
+    StateNotifierProvider((_) => _CounterStateProvider());
