@@ -10,17 +10,13 @@ Route onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case changeNotifierPageRoute:
       return MaterialPageRoute(
-        builder: (context) => const ProviderScope(
-          child: ChangeNotifierPage(),
-        ),
+        builder: (context) => const ChangeNotifierPage(),
       );
     case '/':
     case '/statenotifier':
     default:
       return MaterialPageRoute(
-        builder: (context) => const ProviderScope(
-          child: StateNotifierPage(),
-        ),
+        builder: (context) => const StateNotifierPage(),
       );
   }
 }
