@@ -20,7 +20,7 @@ class ChangeNotifierPage extends StatelessWidget {
         onPressed: () => context.read(counterChangeProvider).increment(),
         label: const Text('+'),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }

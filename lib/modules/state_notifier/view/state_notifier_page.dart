@@ -23,7 +23,7 @@ class StateNotifierPage extends StatelessWidget {
             context.read(counterStateProvider.notifier).increment(),
         label: const Text('+'),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }

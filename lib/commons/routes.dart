@@ -9,6 +9,13 @@ const String stateNotifierPageRoute = '/statenotifier';
 const String futurePageRoute = '/future';
 const String streamPageRoute = '/stream';
 
+const routes = [
+  changeNotifierPageRoute,
+  stateNotifierPageRoute,
+  futurePageRoute,
+  streamPageRoute,
+];
+
 Route onGenerateRoute(RouteSettings settings) {
   return MaterialPageRoute(
     settings: settings,

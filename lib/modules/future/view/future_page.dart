@@ -19,7 +19,7 @@ class FuturePage extends StatelessWidget {
                   ),
         ),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }

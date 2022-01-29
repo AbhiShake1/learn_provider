@@ -19,7 +19,7 @@ class StreamPage extends StatelessWidget {
                   ),
         ),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }

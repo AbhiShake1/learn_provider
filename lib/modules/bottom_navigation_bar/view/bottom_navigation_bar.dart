@@ -5,14 +5,7 @@ import 'package:learn_provider/modules/bottom_navigation_bar/providers/bottom_na
 import '../../../riverpod.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
-  MyBottomNavigationBar({Key? key}) : super(key: key);
-
-  final routes = [
-    changeNotifierPageRoute,
-    stateNotifierPageRoute,
-    futurePageRoute,
-    streamPageRoute,
-  ];
+  const MyBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
