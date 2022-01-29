@@ -6,4 +6,4 @@ class _Future {
   }
 }
 
-final futureProvider = FutureProvider((_) => _Future().getDelayedInt(3));
+final futureIntProvider = FutureProvider((_) => _Future().getDelayedInt(3));

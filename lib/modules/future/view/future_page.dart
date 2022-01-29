@@ -14,7 +14,7 @@ class FuturePage extends StatelessWidget {
           children: [
             Consumer(
               builder: (context, ref, child) =>
-                  ref.watch(futureProvider).maybeWhen(
+                  ref.watch(futureIntProvider).maybeWhen(
                         data: (data) => Text(data.toString()),
                         orElse: () => const CircularProgressIndicator(),
                       ),
