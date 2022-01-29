@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learn_provider/modules/bottom_navigation_bar/view/bottom_navigation_bar.dart';
 import 'package:learn_provider/riverpod.dart';
-import 'package:learn_provider/widgets/navigation.dart';
+
 import '../providers/future_int_provider.dart';
 
 class FuturePage extends StatelessWidget {
@@ -10,19 +11,15 @@ class FuturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            Consumer(
-              builder: (context, ref, child) =>
-                  ref.watch(futureIntProvider).maybeWhen(
-                        data: (data) => Text(data.toString()),
-                        orElse: () => const CircularProgressIndicator(),
-                      ),
-            ),
-            navigationButtons(context)
-          ],
+        child: Consumer(
+          builder: (context, ref, child) =>
+              ref.watch(futureIntProvider).maybeWhen(
+                    data: (data) => Text(data.toString()),
+                    orElse: () => const CircularProgressIndicator(),
+                  ),
         ),
       ),
+      bottomNavigationBar: MyBottomNavigationBar(),
     );
   }
 }

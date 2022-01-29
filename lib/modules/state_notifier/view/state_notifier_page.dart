@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learn_provider/widgets/navigation.dart';
+import 'package:learn_provider/modules/bottom_navigation_bar/view/bottom_navigation_bar.dart';
 import 'package:learn_provider/riverpod.dart';
+
 import '../providers/counter_state_provider.dart';
 
 class StateNotifierPage extends StatelessWidget {
@@ -12,14 +13,9 @@ class StateNotifierPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            Consumer(
-              builder: (context, ref, child) => Text(
-                  'With state notifier: ${ref.watch(counterStateProvider)}'),
-            ),
-            navigationButtons(context)
-          ],
+        child: Consumer(
+          builder: (context, ref, child) =>
+              Text('With state notifier: ${ref.watch(counterStateProvider)}'),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -27,6 +23,7 @@ class StateNotifierPage extends StatelessWidget {
             context.read(counterStateProvider.notifier).increment(),
         label: const Text('+'),
       ),
+      bottomNavigationBar: MyBottomNavigationBar(),
     );
   }
 }
