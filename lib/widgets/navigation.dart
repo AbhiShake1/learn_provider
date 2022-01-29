@@ -13,5 +13,10 @@ Widget navigationButtons(BuildContext context) => Row(
               Navigator.pushReplacementNamed(context, stateNotifierPageRoute),
           child: const Text('State Notifier'),
         ),
+        RaisedButton(
+          onPressed: () =>
+              Navigator.pushReplacementNamed(context, futurePageRoute),
+          child: const Text('Future'),
+        ),
       ],
     );
