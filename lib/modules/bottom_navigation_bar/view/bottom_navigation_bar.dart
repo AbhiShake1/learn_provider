@@ -4,7 +4,7 @@ import 'package:learn_provider/modules/bottom_navigation_bar/providers/bottom_na
 
 import '../../../riverpod.dart';
 
-class MyBottomNavigationBar extends ConsumerWidget {
+class MyBottomNavigationBar extends StatelessWidget {
   MyBottomNavigationBar({Key? key}) : super(key: key);
 
   final routes = [
@@ -15,31 +15,35 @@ class MyBottomNavigationBar extends ConsumerWidget {
   ];
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return NavigationBar(
-      selectedIndex: ref.watch(bottomNavigationIndexProvider),
-      onDestinationSelected: (value) {
-        ref.read(bottomNavigationIndexProvider.notifier).index = value;
-        Navigator.of(context).pushReplacementNamed(routes[value]);
-      },
-      destinations: const [
-        NavigationDestination(
-          icon: Icon(Icons.padding),
-          label: 'Change Notifier',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.padding),
-          label: 'State Notifier',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.padding),
-          label: 'Future',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.padding),
-          label: 'Stream',
-        ),
-      ],
+  Widget build(BuildContext context) {
+    return Consumer(
+      builder: (context, ref, child) => NavigationBar(
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        selectedIndex: ref.watch(bottomNavigationIndexProvider),
+        onDestinationSelected: (value) {
+          Navigator.of(context).pushReplacementNamed(routes[
+              ref.read(bottomNavigationIndexProvider.notifier).index = value]);
+        },
+        destinations: [
+          NavigationDestination(
+            icon: child!,
+            label: 'Change Notifier',
+          ),
+          NavigationDestination(
+            icon: child,
+            label: 'State Notifier',
+          ),
+          NavigationDestination(
+            icon: child,
+            label: 'Future',
+          ),
+          NavigationDestination(
+            icon: child,
+            label: 'Stream',
+          ),
+        ],
+      ),
+      child: const Icon(Icons.padding),
     );
   }
 }
