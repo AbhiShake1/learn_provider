@@ -6,4 +6,5 @@ class _Future {
   }
 }
 
-final futureIntProvider = FutureProvider((_) => _Future().getDelayedInt(3));
+final futureIntProvider =
+    FutureProvider.autoDispose((_) => _Future().getDelayedInt(3));
